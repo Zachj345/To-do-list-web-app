@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title { % block title % } { % endblock % }>Base template</title>
+    <style>
+      nav a {
+        color: rgb(184, 178, 178);
+        font-size: 2em;
+        margin-left: 45px;
+        text-decoration: none;
+      }
+      a:hover {
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('item_list') }}">To do list</a>
+    </nav>
+    <hr />
+    <div class="content">{% block content %} {% endblock %}</div>
+  </body>
+</html>

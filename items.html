@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="description pictures and videos" />
+    <meta name="author" content="Zachary" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Welcome to your To-do-list {% endblock %}</title>
+    {% extends 'base.html' %} {% block content %}
+  </head>
+<body style="background: radial-gradient(rgb(69, 131, 151), rgb(43, 99, 52));">
+  
+<h1 style="text-align: center; font-family: fantasy; font-size: 35px">To do list</h1>
+<hr>
+<br>
+
+<div style="width: 45%; margin: auto">
+  {% for i in lst %}
+
+  <div
+    style="padding: 10px; background-color: rgb(69, 131, 151); margin: 20px"
+  >
+    <p style="font-size: 20px">Task #{{i.id}}  &nbsp &nbsp {{ i.name | title}}  &nbsp - &nbsp {{i.task}}</p>
+
+    <a href="/delete/{{i.id}}" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 25px">Delete</a>
+  </div>
+  {%endfor%}
+</body>
+</footer>
+
+{%endblock%}
+</html>
